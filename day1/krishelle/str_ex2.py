@@ -9,6 +9,7 @@ except SyntaxError:
 octets = ip.split('.')
 
 try:
-    print("{:12}{:12}{:12}{:12}".format(octets[0], octets[1], octets[2], octets[3]))
-except IndexError:
+    print("{:12}{:12}{:12}{:12}".format(*octets))
+except Exception as e:
+    print(e)
     print("Not enough octets in your IP address, please try again.")
