@@ -1,7 +1,11 @@
 #!/usr/bin/env python
 from __future__ import print_function
 
-ip = input("Please enter an IP address: ")
+try:
+    ip = input("Please enter an IP address: ")
+except SyntaxError:
+    print("Syntax error, please try again")
+    ip = raw_input("Please enter an IP address: ")
 octets = ip.split('.')
 
 try:
